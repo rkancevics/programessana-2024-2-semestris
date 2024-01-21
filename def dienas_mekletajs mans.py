@@ -111,3 +111,26 @@ while atbilde == "y":
     if datu_parbaude(dz_g, dz_m, dz_d, sis_g, sis_m, sis_d, sis_n):
         print(dienas_mekletajs(sis_g, sis_m, sis_d, sis_n, dz_g, dz_m, dz_d))
     atbilde = input("Vai mēģināt vēlreiz? ('y'/'n')")
+
+    from datetime import datetime
+
+def is_today(date_to_check):
+    # Get the current date
+    today = datetime.now().date()
+
+    # Convert the input date string to a datetime object
+    try:
+        date_to_check = datetime.strptime(date_to_check, "%m.%d.%Y").date()
+    except ValueError:
+        print("Invalid date format")
+        return False
+
+    # Compare the dates
+    return today == date_to_check
+
+# Example usage
+date_to_check = "01.21.2024"
+if is_today(date_to_check):
+    print(f"{date_to_check} is today!")
+else:
+    print(f"{date_to_check} is not today.")
