@@ -41,7 +41,7 @@ for i in range( len(vardi) ):
 visi = nolasit("faili/cilveki.txt")
 vardi = []
 vecums = []
-for cilveks in visi:
+for cilveks in visi:    
     info = cilveks.split(" ")
     vardi.append(info[0])
     vecums1 = int(info[3].rstrip(","))
